@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     if (Auth::check()) {
         // Redirect to dashboard if user is logged in
-        return redirect()->route('dashboard');
+        return redirect()->route('home');
     } else {
         // Redirect to login page if user is not logged in
         return view('auth.login');
@@ -19,6 +19,15 @@ Route::get('/', function () {
 Auth::routes();
 
 // Route for dashboard page
-Route::get('/dashboard', [HomeController::class, 'index'])
+Route::get('/home', [HomeController::class, 'index'])
     ->middleware('auth')
-    ->name('dashboard');
+    ->name('home');
+
+Route::get('/profile', [HomeController::class, 'profile'])
+    ->middleware('auth')
+    ->name('profile');
+    
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
