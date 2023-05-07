@@ -26,8 +26,11 @@ Route::get('/home', [HomeController::class, 'index'])
 Route::get('/profile', [HomeController::class, 'profile'])
     ->middleware('auth')
     ->name('profile');
+ 
+Route::get('/show', [HomeController::class, 'show'])
+    ->middleware('auth')
+    ->name('show');
     
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

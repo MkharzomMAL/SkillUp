@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::orderby('id','DESC')->get();
 
         return Inertia::render('Dashboard', [
         'users' => $users,
@@ -37,6 +37,10 @@ class HomeController extends Controller
     {
 
         return Inertia::render('Profile');
+    }
+
+    public function show(){
+
     }
     
 }

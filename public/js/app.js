@@ -5324,6 +5324,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -37270,7 +37272,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "card-header" }, [_vm._v("Learning Board")]),
+    _c("div", { staticClass: "card-header" }, [_vm._v("Our Community")]),
     _vm._v(" "),
     _c(
       "div",
@@ -37278,11 +37280,17 @@ var render = function () {
       _vm._l(_vm.users, function (user) {
         return _c(
           "div",
-          { key: user.id, staticClass: "m-3 card col-lg-3 col-sm-6" },
+          { key: user.id, staticClass: "p-3 m-3 card col-lg-3 col-sm-5" },
           [
-            _c("h2", [_vm._v(_vm._s(user.name))]),
+            _c("h4", [_c("strong", [_vm._v(_vm._s(user.name))])]),
             _vm._v(" "),
             _c("p", [_vm._v(_vm._s(user.email))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(user.about))]),
+            _vm._v(" "),
+            _c("a", { staticClass: "btn btn-primary" }, [
+              _vm._v("Book a Trial"),
+            ]),
           ]
         )
       }),
